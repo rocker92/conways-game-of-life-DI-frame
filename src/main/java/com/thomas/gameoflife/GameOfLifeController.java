@@ -23,7 +23,7 @@ public class GameOfLifeController {
     private Timer timer;
 
     public void start(final Stage primaryStage, final GraphicsContext gc) throws Exception {
-        final List<Cell> cells = cellLoader.loadCells("gosper_glider_gun.json");
+        final List<Cell> cells = cellLoader.loadCells("blinker.json");
         
         cellDrawer.init(primaryStage, gc);
 
@@ -32,7 +32,7 @@ public class GameOfLifeController {
             @Override
             public void run() {
                 cellDrawer.draw(cells);
-
+                
                 gameOfLife.nextGeneration(cells);
             }
         }, 0, 60);
